@@ -1,8 +1,8 @@
-<script setup>
+<script setup lang="ts">
 
 import {ref} from "vue";
 
-const hoverIndex = ref(null);
+const hoverIndex = ref(-1);
 let hoverSpan = ref();
 
 const socialsList = [
@@ -10,7 +10,8 @@ const socialsList = [
   {text: 'Blog', icon: 'i-ri-book-2-fill', href: 'https://blog.aixcc.top'},
   {text: 'Mail', icon: 'i-ri-mail-fill', href: 'mailto:x@aixcc.top'},
 ]
-const handleMouseOver = (index, text) => {
+
+function handleMouseOver(index:number, text:string): void {
   hoverIndex.value = index;
   const span = document.createElement('span');
   span.style.visibility = 'hidden';
@@ -20,22 +21,21 @@ const handleMouseOver = (index, text) => {
   const width = span.offsetWidth + 32;
   document.body.removeChild(span);
   document.documentElement.style.setProperty('--dynamic-width', `${width}px`);
-};
+}
 </script>
 
 <template>
-  <div class="container">
-    <div class="icon-container">
-      <a v-for="(social, index) in socialsList" :key=social.text
-         :class="['icon-link', { expanded: hoverIndex === index }, social.text]"
-         :href=social.href
-         @mouseover="handleMouseOver(index, social.text)"
-         @mouseleave="hoverIndex = null">
-        <i :class="social.icon"/>
-        <span v-if="hoverIndex === index" ref="hoverSpan">{{ social.text }}</span>
-      </a>
-    </div>
+  <div class="icon-container">
+    <a v-for="(social, index) in socialsList" :key=social.text
+       :class="['icon-link', { expanded: hoverIndex === index }, social.text]"
+       :href=social.href
+       @mouseover="handleMouseOver(index, social.text)"
+       @mouseleave="hoverIndex = -1">
+      <i :class="social.icon"/>
+      <span v-if="hoverIndex === index" ref="hoverSpan">{{ social.text }}</span>
+    </a>
   </div>
+
 </template>
 
 <style>
@@ -79,7 +79,7 @@ const handleMouseOver = (index, text) => {
 }
 
 .Blog {
-  background-color: #FF69B4;
+  background-color: #c43367;
 }
 
 .Mail {
@@ -91,11 +91,11 @@ const handleMouseOver = (index, text) => {
 }
 
 .Github:hover {
-  background: linear-gradient(to right, #1371EF, #FC1CD5, #FCCC05);
+  background: linear-gradient(to right, #12c2e9, #c471ed, #f64f59);
 }
 
 .Blog:hover {
-  background: linear-gradient(to right, #FDAF42, #FC51FA, #2CD4FF);
+  background: linear-gradient(to right, rgb(131, 96, 195), rgb(46, 191, 145));
 }
 
 </style>

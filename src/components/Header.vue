@@ -1,5 +1,6 @@
 <script setup lang="ts">
-import { reactive} from "vue";
+import {reactive} from "vue";
+
 let user = reactive({
   name: 'Aix',
   role: 'Full Stack',
@@ -8,16 +9,14 @@ let user = reactive({
 </script>
 
 <template>
-  <div class="container">
-    <h1>Hello, I'm <span class="name gradient-text">{{ user.name }}.</span></h1>
-    <p>
-      <span class="emoji">👨‍💻 </span>
-      <span class="role gradient-text">{{ user.role }}</span> Developer
-    </p>
-    <p>
-      <span class="description">{{ user.description }}</span>
-    </p>
-  </div>
+  <h1>Hello, I'm <span class="name gradient-text">{{ user.name }}.</span></h1>
+  <p>
+    <span class="emoji">👨‍💻 </span>
+    <span class="role gradient-text">{{ user.role }}</span> Developer
+  </p>
+  <p>
+    <span class="description">{{ user.description }}</span>
+  </p>
 </template>
 
 <style scoped>
@@ -32,14 +31,14 @@ h1 {
 }
 
 .gradient-text {
-  background: linear-gradient(90deg, #b32cee, #f2a4ff);
+  background: linear-gradient(to right, rgb(33, 147, 176), rgb(109, 213, 237));
   background-clip: text;
   -webkit-text-fill-color: transparent;
 
 }
 
 p {
-  margin: 5px 0 ;
+  margin: 5px 0;
   font-size: 1.2em;
 }
 
