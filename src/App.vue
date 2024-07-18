@@ -1,9 +1,4 @@
 <script setup lang="ts">
-import Header from "./components/Header.vue";
-import Socials from "./components/Socials.vue";
-import Skills from "./components/Skills.vue";
-import Footer from "./components/Footer.vue";
-
 </script>
 
 <template>
@@ -19,10 +14,11 @@ import Footer from "./components/Footer.vue";
   <div max-md:p10 max-w5xl ma flex="~ col justify-center">
     <Header/>
     <Socials/>
-    <img w="full" src="./assets/snake.svg"  alt="snake"/>
+    <Snake/>
     <Skills/>
     <Footer/>
   </div>
+
 </template>
 
 <style scoped>
