@@ -58,7 +58,7 @@ function handleMouseOver(index: number, text: string): void {
     </a>
     <transition name="popup">
       <div v-if="showPopup" class="popup-background" @click="showPopup = false">
-        <img alt="Popup Image" class="popup-content" src="../assets/applaud.jpg"/>
+        <img alt="Applaud Image" class="popup-content" src="../assets/applaud.jpg"/>
       </div>
     </transition>
   </div>
