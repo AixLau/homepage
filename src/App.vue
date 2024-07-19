@@ -11,7 +11,7 @@
     col 表示 Flexbox 方向为列方向（即垂直方向）。
     justify-center 表示在主轴（垂直方向）上居中对齐。
   -->
-  <div flex="~ col justify-center" ma max-md-pt-0 max-md:p10 max-w5xl>
+  <div flex="~ col justify-center" ma max-md-pt-0 max-md:p10 max-w5xl pl-4 pr-4>
     <Header/>
     <Socials/>
     <Snake/>

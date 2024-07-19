@@ -14,9 +14,7 @@ let user = reactive({
     <span class="emoji">👨‍💻 </span>
     <span class="role gradient-text">{{ user.role }}</span> Developer
   </p>
-  <p>
-    <span class="description">{{ user.description }}</span>
-  </p>
+  <p><span class="description">{{ user.description }}</span></p>
 </template>
 
 <style scoped>

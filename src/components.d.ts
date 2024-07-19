@@ -12,7 +12,5 @@ declare module 'vue' {
     Skills: typeof import('./components/Skills.vue')['default']
     Snake: typeof import('./components/Snake.vue')['default']
     Socials: typeof import('./components/Socials.vue')['default']
-    Test: typeof import('./components/Test.vue')['default']
-    UsePreferredDark: typeof import('@vueuse/components')['UsePreferredDark']
   }
 }
